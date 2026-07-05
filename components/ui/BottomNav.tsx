@@ -15,6 +15,10 @@ const NAV_ITEMS = [
 export function BottomNav() {
   const pathname = usePathname();
 
+  if (pathname.startsWith("/workout")) {
+    return null;
+  }
+
   return (
     <nav className="bottom-nav fixed bottom-0 inset-x-0 z-50 bg-dark-900/90 backdrop-blur-xl border-t border-white/5">
       <div className="flex items-center justify-around h-[--nav-height] px-2">

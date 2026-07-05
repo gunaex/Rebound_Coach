@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+dist
+coverage
+
+# Local env files
+.env
+.env*.local
+
+# Build/cache artifacts
+*.tsbuildinfo
+public/sw.js
+public/workbox-*.js
+
+# OS/editor noise
+.DS_Store

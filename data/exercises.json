@@ -1,0 +1,494 @@
+[
+  {
+    "id": "goblet-squat",
+    "name": "Goblet Squat",
+    "category": "strength",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Quadriceps", "Glutes"],
+    "secondaryMuscles": ["Core", "Hamstrings", "Calves"],
+    "basketballBenefit": "Builds explosive leg drive for driving to the basket, jumping, and defensive stance endurance.",
+    "description": "Hold a dumbbell or kettlebell at chest height and squat deep while keeping your chest tall. The goblet position teaches perfect squat mechanics.",
+    "coachTips": [
+      "Keep elbows inside your knees at the bottom",
+      "Drive through your heels to stand",
+      "Chest stays tall — no rounding forward",
+      "Control the descent for 2–3 seconds"
+    ],
+    "commonMistakes": [
+      "Knees caving inward",
+      "Heels rising off floor",
+      "Leaning too far forward",
+      "Not reaching parallel depth"
+    ],
+    "equipment": ["dumbbell", "kettlebell"],
+    "image": "/exercises/strength.svg",
+    "sets": 3,
+    "reps": "12",
+    "rest": 90,
+    "unlockLevel": "foundation",
+    "skillName": "Court Power",
+    "skillDescription": "Channel lower body power into explosive basketball movements."
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian Deadlift",
+    "category": "strength",
+    "difficulty": "intermediate",
+    "primaryMuscles": ["Hamstrings", "Glutes"],
+    "secondaryMuscles": ["Lower Back", "Core", "Grip"],
+    "basketballBenefit": "Strengthens the posterior chain for explosive acceleration, rebounding jumps, and injury prevention.",
+    "description": "Hip-hinge movement with dumbbells or barbell, lowering weights along your thighs while maintaining a flat back.",
+    "coachTips": [
+      "Push your hips back, not down",
+      "Keep the bar/weights close to your body",
+      "Feel a strong stretch in your hamstrings at the bottom",
+      "Squeeze glutes hard at the top"
+    ],
+    "commonMistakes": [
+      "Rounding the lower back",
+      "Bending the knees too much (becomes a squat)",
+      "Not hinging at the hips",
+      "Dropping the weights too fast"
+    ],
+    "equipment": ["dumbbell", "barbell"],
+    "image": "/exercises/strength.svg",
+    "sets": 3,
+    "reps": "10",
+    "rest": 90,
+    "unlockLevel": "foundation",
+    "skillName": "Posterior Chain",
+    "skillDescription": "Dominant hamstrings and glutes for elite-level athleticism."
+  },
+  {
+    "id": "reverse-lunge",
+    "name": "Reverse Lunge",
+    "category": "strength",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Quadriceps", "Glutes"],
+    "secondaryMuscles": ["Hamstrings", "Core", "Hip Flexors"],
+    "basketballBenefit": "Trains single-leg strength and balance critical for basketball cuts, drives, and landing safely.",
+    "description": "Step backward into a lunge, lowering your back knee toward the floor. Safer on the knees than a forward lunge.",
+    "coachTips": [
+      "Keep your front knee directly above your ankle",
+      "Stay tall — don't lean forward",
+      "Drive through your front heel to return",
+      "Add dumbbells for progression"
+    ],
+    "commonMistakes": [
+      "Front knee drifting past toes",
+      "Back knee slamming the floor",
+      "Losing balance by looking down",
+      "Overstriding the back foot"
+    ],
+    "equipment": ["bodyweight", "dumbbell"],
+    "image": "/exercises/strength.svg",
+    "sets": 3,
+    "reps": "10 each side",
+    "rest": 60,
+    "unlockLevel": "foundation",
+    "skillName": "Balance Master",
+    "skillDescription": "Single-leg stability for dynamic basketball movements."
+  },
+  {
+    "id": "bulgarian-split-squat",
+    "name": "Bulgarian Split Squat",
+    "category": "strength",
+    "difficulty": "intermediate",
+    "primaryMuscles": ["Quadriceps", "Glutes"],
+    "secondaryMuscles": ["Hamstrings", "Core", "Hip Flexors"],
+    "basketballBenefit": "The ultimate single-leg strength builder — translates directly to explosive cuts, sprints, and lateral movement.",
+    "description": "Rear foot elevated on a bench or box, front leg does all the work. A brutal but incredibly effective leg exercise.",
+    "coachTips": [
+      "Front foot far enough forward so knee doesn't go past toes",
+      "Keep your torso upright",
+      "Control the descent slowly",
+      "Don't let your front knee cave inward"
+    ],
+    "commonMistakes": [
+      "Front foot too close to bench",
+      "Rushing the movement",
+      "Using too much weight too soon",
+      "Hips tilting to one side"
+    ],
+    "equipment": ["dumbbell", "bodyweight"],
+    "image": "/exercises/strength.svg",
+    "sets": 3,
+    "reps": "8 each side",
+    "rest": 90,
+    "unlockLevel": "stability",
+    "skillName": "Iron Legs",
+    "skillDescription": "Unilateral strength that builds elite-level leg power."
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip Thrust",
+    "category": "strength",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Glutes"],
+    "secondaryMuscles": ["Hamstrings", "Core", "Hip Flexors"],
+    "basketballBenefit": "Direct glute power for vertical jump height, sprint speed, and explosive directional changes.",
+    "description": "Shoulders on bench, drive hips up using glute power. The king of glute exercises.",
+    "coachTips": [
+      "Squeeze glutes hard at the top",
+      "Chin tucked — don't hyperextend your neck",
+      "Feet flat, knees at 90° at the top",
+      "Use a barbell or dumbbell for resistance"
+    ],
+    "commonMistakes": [
+      "Hyperextending the lower back at the top",
+      "Not squeezing glutes at peak",
+      "Feet too close or far from body",
+      "Using hips as momentum (not control)"
+    ],
+    "equipment": ["barbell", "dumbbell", "bodyweight"],
+    "image": "/exercises/strength.svg",
+    "sets": 3,
+    "reps": "12",
+    "rest": 90,
+    "unlockLevel": "foundation",
+    "skillName": "Glute Drive",
+    "skillDescription": "Posterior power for vertical dominance on the court."
+  },
+  {
+    "id": "side-plank",
+    "name": "Side Plank",
+    "category": "core",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Obliques", "Core"],
+    "secondaryMuscles": ["Glutes", "Shoulders", "Hip Abductors"],
+    "basketballBenefit": "Lateral core stability prevents injury during physical contact and improves balance in all basketball positions.",
+    "description": "Lie on your side, prop up on one forearm, and lift hips to create a straight line from head to feet.",
+    "coachTips": [
+      "Stack your feet or stagger for balance",
+      "Don't let hips sag or pike up",
+      "Look straight ahead, not at the floor",
+      "Breathe steadily through the hold"
+    ],
+    "commonMistakes": [
+      "Hips dropping below the line",
+      "Rotating the torso toward the floor",
+      "Holding breath",
+      "Shoulder collapsing inward"
+    ],
+    "equipment": ["bodyweight"],
+    "image": "/exercises/core.svg",
+    "sets": 3,
+    "reps": "30 sec each side",
+    "timer": 30,
+    "rest": 60,
+    "unlockLevel": "foundation",
+    "isTimed": true,
+    "skillName": "Core Shield",
+    "skillDescription": "Lateral core armor — protect your body through every contact."
+  },
+  {
+    "id": "dead-bug",
+    "name": "Dead Bug",
+    "category": "core",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Deep Core", "Transverse Abdominis"],
+    "secondaryMuscles": ["Hip Flexors", "Shoulders"],
+    "basketballBenefit": "Anti-extension core stability protects your spine during explosive movements and improves body control.",
+    "description": "Lying on your back, extend opposite arm and leg while keeping your lower back pressed to the floor.",
+    "coachTips": [
+      "Press your lower back firmly into the floor the whole time",
+      "Move SLOW — this is about control, not speed",
+      "Breathe out as you extend the limbs",
+      "Never let your low back lift"
+    ],
+    "commonMistakes": [
+      "Lower back arching off the floor",
+      "Moving too fast",
+      "Holding breath",
+      "Arms and legs not fully extended"
+    ],
+    "equipment": ["bodyweight"],
+    "image": "/exercises/core.svg",
+    "sets": 3,
+    "reps": "8 each side",
+    "rest": 60,
+    "unlockLevel": "foundation",
+    "skillName": "Anti-Gravity Core",
+    "skillDescription": "Deep core strength for unshakeable body control."
+  },
+  {
+    "id": "copenhagen-plank",
+    "name": "Copenhagen Plank",
+    "category": "core",
+    "difficulty": "advanced",
+    "primaryMuscles": ["Adductors", "Obliques"],
+    "secondaryMuscles": ["Glutes", "Core"],
+    "basketballBenefit": "Most effective exercise for preventing groin injuries — the #1 basketball injury. Also builds lateral stability for defensive slides.",
+    "description": "Side plank with top leg elevated on a bench. Extremely challenging adductor and core exercise.",
+    "coachTips": [
+      "Start with the easy variation (bottom knee on ground)",
+      "Keep your body in a straight line",
+      "Don't let your hips rotate",
+      "Work up to the full version gradually"
+    ],
+    "commonMistakes": [
+      "Hips twisting forward",
+      "Top leg not aligned with body",
+      "Going too hard too soon (groin injury risk)",
+      "Not breathing"
+    ],
+    "equipment": ["bench", "bodyweight"],
+    "image": "/exercises/core.svg",
+    "sets": 3,
+    "reps": "20 sec each side",
+    "timer": 20,
+    "rest": 90,
+    "unlockLevel": "strength",
+    "isTimed": true,
+    "skillName": "Groin Guard",
+    "skillDescription": "Elite adductor strength for injury-proof lateral movement."
+  },
+  {
+    "id": "box-jump",
+    "name": "Box Jump",
+    "category": "power",
+    "difficulty": "intermediate",
+    "primaryMuscles": ["Quadriceps", "Glutes", "Calves"],
+    "secondaryMuscles": ["Hamstrings", "Core"],
+    "basketballBenefit": "Directly trains the explosive fast-twitch power needed for vertical jump, shot-blocking, and rebounding.",
+    "description": "Explosive jump onto a box or platform. Focus on landing softly and loading for the next jump.",
+    "coachTips": [
+      "Use your arms — big arm swing helps!",
+      "Land softly on both feet, absorb impact",
+      "Step (not jump) back down to protect your knees",
+      "Focus on maximum effort each rep"
+    ],
+    "commonMistakes": [
+      "Landing with straight legs (crushes your joints)",
+      "Jumping down instead of stepping down",
+      "Too high a box too early",
+      "No arm swing = 30% less power"
+    ],
+    "equipment": ["box"],
+    "image": "/exercises/power.svg",
+    "sets": 4,
+    "reps": "5",
+    "rest": 120,
+    "unlockLevel": "stability",
+    "skillName": "Vertical Force",
+    "skillDescription": "Explosive jumping power that elevates your game above the rim."
+  },
+  {
+    "id": "lateral-band-walk",
+    "name": "Lateral Band Walk",
+    "category": "stability",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Glute Medius", "Hip Abductors"],
+    "secondaryMuscles": ["Quadriceps", "Core"],
+    "basketballBenefit": "Activates the glute med — the key muscle for lateral speed, defensive slides, and knee injury prevention.",
+    "description": "Band around ankles or knees, walk sideways in an athletic stance. Every step fires the glute med.",
+    "coachTips": [
+      "Stay low in an athletic stance the whole time",
+      "Take controlled steps — don't shuffle feet together",
+      "Keep toes pointing forward, not out",
+      "Feel the burn on the outer hip"
+    ],
+    "commonMistakes": [
+      "Standing upright instead of athletic stance",
+      "Feet coming together between steps",
+      "Toes pointing outward",
+      "Band too high (around thighs = easier, less effective)"
+    ],
+    "equipment": ["resistance_band"],
+    "image": "/exercises/stability.svg",
+    "sets": 3,
+    "reps": "15 steps each direction",
+    "rest": 60,
+    "unlockLevel": "foundation",
+    "skillName": "Lateral Speed",
+    "skillDescription": "Hip power for elite defensive slides and quick lateral cuts."
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof Press",
+    "category": "core",
+    "difficulty": "intermediate",
+    "primaryMuscles": ["Core", "Obliques"],
+    "secondaryMuscles": ["Shoulders", "Chest"],
+    "basketballBenefit": "Anti-rotation core strength for fighting through screens, posting up, and maintaining position under physical pressure.",
+    "description": "Hold a cable or band at chest height, press straight out and resist the rotation force. The best anti-rotation exercise.",
+    "coachTips": [
+      "Stand perpendicular to the anchor point",
+      "Press straight out — don't twist",
+      "Hold for 2 seconds at full extension",
+      "Keep hips level and stable"
+    ],
+    "commonMistakes": [
+      "Rotating toward the anchor",
+      "Using too much weight",
+      "Feet not hip-width apart",
+      "Shrugging shoulders"
+    ],
+    "equipment": ["cable", "resistance_band"],
+    "image": "/exercises/core.svg",
+    "sets": 3,
+    "reps": "10 each side",
+    "rest": 60,
+    "unlockLevel": "stability",
+    "skillName": "Iron Core",
+    "skillDescription": "Anti-rotation strength for holding your ground in physical play."
+  },
+  {
+    "id": "turkish-get-up",
+    "name": "Turkish Get-Up",
+    "category": "stability",
+    "difficulty": "legendary",
+    "primaryMuscles": ["Full Body", "Shoulders", "Core"],
+    "secondaryMuscles": ["Hips", "Glutes", "Quadriceps"],
+    "basketballBenefit": "The ultimate full-body coordination exercise — builds shoulder stability, core control, and total-body movement quality.",
+    "description": "Starting lying down with a kettlebell locked overhead, stand up while keeping the weight locked overhead the entire time. One of the most complex human movements.",
+    "coachTips": [
+      "Start with no weight — nail the movement pattern first",
+      "Eyes on the bell the ENTIRE time",
+      "Every transition is slow and controlled",
+      "Think of it as 7 individual exercises in one"
+    ],
+    "commonMistakes": [
+      "Rushing through the transitions",
+      "Losing the locked position overhead",
+      "Using too heavy a weight",
+      "Not learning each step individually first"
+    ],
+    "equipment": ["kettlebell"],
+    "image": "/exercises/power.svg",
+    "sets": 2,
+    "reps": "3 each side",
+    "rest": 120,
+    "unlockLevel": "athletic",
+    "skillName": "Legendary: Get-Up",
+    "skillDescription": "LEGENDARY — Master of total body coordination and control."
+  },
+  {
+    "id": "jump-rope",
+    "name": "Jump Rope",
+    "category": "cardio",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Calves", "Shoulders", "Core"],
+    "secondaryMuscles": ["Quadriceps", "Forearms"],
+    "basketballBenefit": "Improves footwork, coordination, and cardiovascular conditioning — directly translates to on-court agility.",
+    "description": "Classic jump rope — single bounces, staying on the balls of your feet. Build endurance and foot speed simultaneously.",
+    "coachTips": [
+      "Stay on the balls of your feet — never flat-footed",
+      "Small jumps — just enough clearance for the rope",
+      "Elbows stay close to your body",
+      "Land softly to protect your joints"
+    ],
+    "commonMistakes": [
+      "Jumping too high (wastes energy)",
+      "Landing on heels",
+      "Large arm circles (use wrists)",
+      "Holding your breath"
+    ],
+    "equipment": ["jump_rope"],
+    "image": "/exercises/cardio.svg",
+    "sets": 5,
+    "reps": "3 min",
+    "timer": 180,
+    "rest": 60,
+    "unlockLevel": "foundation",
+    "isTimed": true,
+    "skillName": "Footwork Flash",
+    "skillDescription": "Lightning foot speed and court agility conditioning."
+  },
+  {
+    "id": "bike-sprint",
+    "name": "Bike Sprint",
+    "category": "cardio",
+    "difficulty": "intermediate",
+    "primaryMuscles": ["Quadriceps", "Glutes", "Cardiovascular System"],
+    "secondaryMuscles": ["Hamstrings", "Calves"],
+    "basketballBenefit": "High-intensity intervals build the explosive cardiovascular capacity needed for full-court sprints and pressing defense.",
+    "description": "Short, maximal effort sprints on a stationary bike (or outdoor). 20 seconds all-out, 40 seconds easy.",
+    "coachTips": [
+      "All-out means ALL OUT on the sprint — 100% effort",
+      "Keep resistance high enough to prevent spinning",
+      "Active recovery during rest (keep pedaling slow)",
+      "Count: 5 rounds minimum"
+    ],
+    "commonMistakes": [
+      "Not going hard enough on sprints",
+      "Too low resistance",
+      "Stopping completely during rest",
+      "Fewer than 5 rounds"
+    ],
+    "equipment": ["bike"],
+    "image": "/exercises/cardio.svg",
+    "sets": 8,
+    "reps": "20 sec sprint / 40 sec rest",
+    "timer": 20,
+    "rest": 40,
+    "unlockLevel": "stability",
+    "isTimed": true,
+    "skillName": "Cardio Engine",
+    "skillDescription": "Unstoppable cardiovascular capacity for 40 hard minutes."
+  },
+  {
+    "id": "hip-flexor-stretch",
+    "name": "Hip Flexor Stretch",
+    "category": "mobility",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Hip Flexors", "Iliopsoas"],
+    "secondaryMuscles": ["Quadriceps", "Lower Back"],
+    "basketballBenefit": "Tight hip flexors limit your stride length and vertical jump. Releasing them unlocks explosive athletic performance.",
+    "description": "Kneeling lunge stretch with weight shifted forward, feeling a deep stretch through the front of the hip.",
+    "coachTips": [
+      "Squeeze your back glute to deepen the stretch",
+      "Keep your torso tall",
+      "Breathe deeply into the stretch",
+      "Hold 45–60 seconds each side"
+    ],
+    "commonMistakes": [
+      "Not squeezing glute (limits stretch depth)",
+      "Leaning forward aggressively",
+      "Holding breath",
+      "Rushing through the hold"
+    ],
+    "equipment": ["bodyweight"],
+    "image": "/exercises/mobility.svg",
+    "sets": 2,
+    "reps": "45 sec each side",
+    "timer": 45,
+    "rest": 30,
+    "unlockLevel": "foundation",
+    "isTimed": true,
+    "skillName": "Hip Freedom",
+    "skillDescription": "Unlock your full athletic range of motion on the court."
+  },
+  {
+    "id": "foam-roll-quads",
+    "name": "Foam Roll — Quads",
+    "category": "mobility",
+    "difficulty": "beginner",
+    "primaryMuscles": ["Quadriceps"],
+    "secondaryMuscles": ["IT Band", "Hip Flexors"],
+    "basketballBenefit": "Regular quad rolling prevents the knee pain that ends basketball careers. Essential maintenance for heavy leg training days.",
+    "description": "Lie face down with foam roller under your quads. Slowly roll from hip to knee, pausing on tight spots.",
+    "coachTips": [
+      "Roll slowly — 1 inch per second",
+      "Pause on tight spots for 10–20 seconds",
+      "Rotate your leg in/out to hit different angles",
+      "Don't roll over joints (knees, hips)"
+    ],
+    "commonMistakes": [
+      "Rolling too fast",
+      "Rolling over the knee joint",
+      "Not enough body weight on the roller",
+      "Only rolling in one direction"
+    ],
+    "equipment": ["foam_roller"],
+    "image": "/exercises/mobility.svg",
+    "sets": 1,
+    "reps": "90 sec each leg",
+    "timer": 90,
+    "rest": 15,
+    "unlockLevel": "foundation",
+    "isTimed": true,
+    "skillName": "Recovery Protocol",
+    "skillDescription": "Tissue quality maintenance for long-term athletic longevity."
+  }
+]

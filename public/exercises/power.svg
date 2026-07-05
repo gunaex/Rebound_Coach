@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Power training">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#facc15"/><stop offset=".48" stop-color="#f97316"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
+  <rect width="1200" height="720" fill="url(#g)"/>
+  <path d="M650 70L360 404h196l-38 246 310-356H624L650 70Z" fill="#fff7ed"/>
+  <path d="M176 520h848" stroke="#0f172a" stroke-width="28" stroke-linecap="round" opacity=".65"/>
+  <text x="72" y="110" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">POWER</text>
+</svg>

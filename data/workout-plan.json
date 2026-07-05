@@ -1,0 +1,133 @@
+{
+  "id": "phase-1-foundation",
+  "name": "Phase 1 — Foundation",
+  "description": "Build the movement foundation with fundamental strength and basketball athleticism. 6-week program focused on building muscle, burning fat, and establishing basketball-specific fitness.",
+  "totalWeeks": 6,
+  "currentPhase": "Foundation",
+  "schedule": [
+    {
+      "id": "court-power-a",
+      "name": "Court Power A",
+      "type": "court_power",
+      "weekDay": "monday",
+      "description": "Lower body strength + core. Build the foundation of explosive basketball power.",
+      "estimatedDuration": 55,
+      "difficulty": "intermediate",
+      "exerciseIds": [
+        "goblet-squat",
+        "romanian-deadlift",
+        "lateral-band-walk",
+        "side-plank",
+        "dead-bug",
+        "hip-thrust"
+      ],
+      "warmupIds": ["hip-flexor-stretch", "lateral-band-walk"],
+      "cooldownIds": ["hip-flexor-stretch", "foam-roll-quads"],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "cardio-day",
+      "name": "Cardio Day",
+      "type": "cardio",
+      "weekDay": "tuesday",
+      "description": "Interval cardio to maximize fat loss and build the cardiovascular engine for full-court basketball.",
+      "estimatedDuration": 40,
+      "difficulty": "intermediate",
+      "exerciseIds": [
+        "jump-rope",
+        "bike-sprint"
+      ],
+      "warmupIds": ["hip-flexor-stretch"],
+      "cooldownIds": ["hip-flexor-stretch", "foam-roll-quads"],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "court-power-b",
+      "name": "Court Power B",
+      "type": "court_power",
+      "weekDay": "wednesday",
+      "description": "Single-leg strength + stability. Injury prevention and asymmetry correction for elite basketball readiness.",
+      "estimatedDuration": 55,
+      "difficulty": "intermediate",
+      "exerciseIds": [
+        "reverse-lunge",
+        "bulgarian-split-squat",
+        "pallof-press",
+        "dead-bug",
+        "lateral-band-walk",
+        "hip-thrust"
+      ],
+      "warmupIds": ["hip-flexor-stretch", "lateral-band-walk"],
+      "cooldownIds": ["hip-flexor-stretch", "foam-roll-quads"],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "recovery-a",
+      "name": "Recovery Day",
+      "type": "recovery",
+      "weekDay": "thursday",
+      "description": "Active recovery, mobility work, and tissue quality. This is where the gains happen.",
+      "estimatedDuration": 30,
+      "difficulty": "beginner",
+      "exerciseIds": [
+        "hip-flexor-stretch",
+        "foam-roll-quads",
+        "dead-bug",
+        "side-plank"
+      ],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "court-power-c",
+      "name": "Court Power C",
+      "type": "court_power",
+      "weekDay": "friday",
+      "description": "Power + Explosiveness. Box jumps and full-body strength for vertical jump and court dominance.",
+      "estimatedDuration": 60,
+      "difficulty": "advanced",
+      "exerciseIds": [
+        "box-jump",
+        "goblet-squat",
+        "romanian-deadlift",
+        "copenhagen-plank",
+        "pallof-press",
+        "side-plank"
+      ],
+      "warmupIds": ["lateral-band-walk", "hip-flexor-stretch"],
+      "cooldownIds": ["foam-roll-quads", "hip-flexor-stretch"],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "long-basketball",
+      "name": "Long Basketball",
+      "type": "basketball",
+      "weekDay": "saturday",
+      "description": "Full game day. Put your training to work on the court. Track your performance.",
+      "estimatedDuration": 90,
+      "difficulty": "intermediate",
+      "exerciseIds": [
+        "jump-rope",
+        "hip-flexor-stretch",
+        "lateral-band-walk"
+      ],
+      "warmupIds": ["hip-flexor-stretch", "lateral-band-walk"],
+      "cooldownIds": ["foam-roll-quads", "hip-flexor-stretch"],
+      "phase": "Phase 1 — Foundation"
+    },
+    {
+      "id": "recovery-flex",
+      "name": "Recovery / Flex",
+      "type": "flex",
+      "weekDay": "sunday",
+      "description": "Complete rest or light mobility. Listen to your body. Consistency beats intensity.",
+      "estimatedDuration": 20,
+      "difficulty": "beginner",
+      "exerciseIds": [
+        "hip-flexor-stretch",
+        "foam-roll-quads",
+        "side-plank"
+      ],
+      "phase": "Phase 1 — Foundation"
+    }
+  ]
+}

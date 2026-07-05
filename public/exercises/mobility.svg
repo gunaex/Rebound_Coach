@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Mobility training">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2dd4bf"/><stop offset=".52" stop-color="#1e293b"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
+  <rect width="1200" height="720" fill="url(#g)"/>
+  <path d="M314 464c122-166 246-238 372-216 86 15 154 67 200 156" fill="none" stroke="#ccfbf1" stroke-width="34" stroke-linecap="round"/>
+  <path d="M420 520h360" stroke="#2dd4bf" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="392" cy="326" r="54" fill="#f0fdfa"/>
+  <text x="72" y="110" fill="#f0fdfa" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800">MOBILITY</text>
+</svg>

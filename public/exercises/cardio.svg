@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Cardio training">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fb7185"/><stop offset=".5" stop-color="#1e293b"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
+  <rect width="1200" height="720" fill="url(#g)"/>
+  <path d="M210 440c118-168 230-168 336 0s220 168 344 0" fill="none" stroke="#ffe4e6" stroke-width="34" stroke-linecap="round"/>
+  <path d="M252 520h696" stroke="#fb7185" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="600" cy="302" r="58" fill="#fff1f2"/>
+  <text x="72" y="110" fill="#fff1f2" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800">CARDIO</text>
+</svg>

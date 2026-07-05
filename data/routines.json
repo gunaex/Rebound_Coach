@@ -1,0 +1,233 @@
+[
+  {
+    "id": "phase-1-execution",
+    "name": "Phase 1 Execution Block",
+    "type": "strength",
+    "days": [
+      {
+        "date": "2026-07-05",
+        "sessions": [
+          {
+            "title": "Recovery / Flex",
+            "exercises": [
+              {
+                "name": "Hip Flexor Stretch",
+                "sets": 2,
+                "durationSec": 45,
+                "restSec": 20,
+                "instruction": "Keep ribs stacked over pelvis and squeeze the rear glute.",
+                "difficulty": 3
+              },
+              {
+                "name": "Foam Roll Quads",
+                "sets": 2,
+                "durationSec": 60,
+                "restSec": 20,
+                "instruction": "Move slowly and pause on tight tissue without holding your breath.",
+                "difficulty": 2
+              },
+              {
+                "name": "Side Plank",
+                "sets": 3,
+                "durationSec": 30,
+                "restSec": 45,
+                "instruction": "Create a straight line from shoulder to ankle. Do both sides.",
+                "difficulty": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-06",
+        "sessions": [
+          {
+            "title": "Court Power A",
+            "exercises": [
+              {
+                "name": "Goblet Squat",
+                "sets": 3,
+                "reps": 12,
+                "restSec": 90,
+                "instruction": "Sit between your hips, keep chest tall, and drive the floor away.",
+                "difficulty": 5
+              },
+              {
+                "name": "Romanian Deadlift",
+                "sets": 3,
+                "reps": 10,
+                "restSec": 90,
+                "instruction": "Push hips back, keep shins quiet, and feel hamstrings load.",
+                "difficulty": 6
+              },
+              {
+                "name": "Lateral Band Walk",
+                "sets": 3,
+                "reps": 15,
+                "restSec": 60,
+                "instruction": "Stay low in an athletic stance. Count reps each direction.",
+                "difficulty": 4
+              },
+              {
+                "name": "Dead Bug",
+                "sets": 3,
+                "reps": 8,
+                "restSec": 45,
+                "instruction": "Exhale as you extend and keep your lower back heavy on the floor.",
+                "difficulty": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-07",
+        "sessions": [
+          {
+            "title": "Cardio Day",
+            "exercises": [
+              {
+                "name": "Jump Rope",
+                "sets": 6,
+                "durationSec": 45,
+                "restSec": 30,
+                "instruction": "Light feet, tall posture, smooth rhythm.",
+                "difficulty": 6
+              },
+              {
+                "name": "Bike Sprint",
+                "sets": 8,
+                "durationSec": 20,
+                "restSec": 70,
+                "instruction": "Sprint hard, then recover fully before the next burst.",
+                "difficulty": 7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-08",
+        "sessions": [
+          {
+            "title": "Court Power B",
+            "exercises": [
+              {
+                "name": "Reverse Lunge",
+                "sets": 3,
+                "reps": 10,
+                "restSec": 60,
+                "instruction": "Step back under control and drive through the front heel.",
+                "difficulty": 5
+              },
+              {
+                "name": "Bulgarian Split Squat",
+                "sets": 3,
+                "reps": 8,
+                "restSec": 90,
+                "instruction": "Control depth and keep the front knee tracking over toes.",
+                "difficulty": 7
+              },
+              {
+                "name": "Pallof Press",
+                "sets": 3,
+                "reps": 10,
+                "restSec": 45,
+                "instruction": "Press straight out and resist rotation through your trunk.",
+                "difficulty": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-09",
+        "sessions": [
+          {
+            "title": "Recovery",
+            "exercises": [
+              {
+                "name": "Hip Flexor Stretch",
+                "sets": 2,
+                "durationSec": 60,
+                "restSec": 20,
+                "instruction": "Relax into the stretch and breathe through the nose.",
+                "difficulty": 2
+              },
+              {
+                "name": "Dead Bug",
+                "sets": 3,
+                "reps": 8,
+                "restSec": 45,
+                "instruction": "Move slowly enough that your torso does not shift.",
+                "difficulty": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-10",
+        "sessions": [
+          {
+            "title": "Court Power C",
+            "exercises": [
+              {
+                "name": "Box Jump",
+                "sets": 4,
+                "reps": 5,
+                "restSec": 120,
+                "instruction": "Jump with intent, land softly, and step down.",
+                "difficulty": 8
+              },
+              {
+                "name": "Goblet Squat",
+                "sets": 3,
+                "reps": 10,
+                "restSec": 90,
+                "instruction": "Make every rep crisp and powerful.",
+                "difficulty": 6
+              },
+              {
+                "name": "Copenhagen Plank",
+                "sets": 3,
+                "durationSec": 20,
+                "restSec": 75,
+                "instruction": "Use the easier variation if the groin feels sharp.",
+                "difficulty": 8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-11",
+        "sessions": [
+          {
+            "title": "Long Basketball",
+            "exercises": [
+              {
+                "name": "Dynamic Warmup",
+                "durationSec": 600,
+                "instruction": "Raise temperature, open hips, and build into game speed.",
+                "difficulty": 4
+              },
+              {
+                "name": "Full Court Run",
+                "durationSec": 3600,
+                "instruction": "Play or drill with game pace. Track effort and energy.",
+                "difficulty": 7
+              },
+              {
+                "name": "Cooldown Walk",
+                "durationSec": 300,
+                "instruction": "Bring your heart rate down before stretching.",
+                "difficulty": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

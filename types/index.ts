@@ -93,6 +93,47 @@ export interface WorkoutPlan {
   schedule: WorkoutDay[];
 }
 
+// ===== ROUTINE EXECUTION TYPES =====
+
+export type RoutineType = "strength" | "basketball" | "recovery";
+
+export interface RoutineExercise {
+  name: string;
+  sets?: number;
+  reps?: number;
+  durationSec?: number;
+  restSec?: number;
+  instruction?: string;
+  difficulty?: number;
+}
+
+export interface RoutineSession {
+  title: string;
+  exercises: RoutineExercise[];
+}
+
+export interface RoutineDay {
+  date: string;
+  sessions: RoutineSession[];
+}
+
+export interface Routine {
+  id: string;
+  name: string;
+  type: RoutineType;
+  days: RoutineDay[];
+}
+
+export interface ExecutionStep {
+  id: string;
+  routineId: string;
+  date: string;
+  sessionIndex: number;
+  exerciseIndex: number;
+  sessionTitle: string;
+  exercise: RoutineExercise;
+}
+
 // ===== LOGGING / PROGRESS TYPES =====
 
 export interface ExerciseLog {

@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { getTodayDateString, formatDuration } from "@/lib/workout";
 import {
-  getWorkoutForDate,
-  getTodayDateString,
-  formatDuration,
-  getWorkoutTypeLabel,
-} from "@/lib/workout";
+  getRoutineDayForDate,
+  getRoutineDifficulty,
+  getRoutineEstimatedMinutes,
+} from "@/lib/routines";
 import { getWorkoutLogs } from "@/lib/storage";
-import type { WorkoutDay, WorkoutLog } from "@/types";
-import { Badge, difficultyVariant } from "@/components/ui/Badge";
+import type { Routine, RoutineDay, WorkoutLog } from "@/types";
+import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -19,19 +19,20 @@ const MONTHS = [
   "July","August","September","October","November","December",
 ];
 
-const WORKOUT_COLORS: Record<string, string> = {
-  court_power: "bg-brand-500/20 border-brand-500/30 text-brand-400",
-  cardio: "bg-rose-500/20 border-rose-500/30 text-rose-400",
-  recovery: "bg-teal-500/20 border-teal-500/30 text-teal-400",
-  basketball: "bg-amber-500/20 border-amber-500/30 text-amber-400",
-  flex: "bg-slate-500/20 border-slate-500/30 text-slate-400",
+const ROUTINE_DOT_COLORS: Record<string, string> = {
+  strength: "bg-brand-500",
+  basketball: "bg-amber-400",
+  recovery: "bg-teal-400",
 };
 
 export function CalendarPageClient() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [selectedWorkout, setSelectedWorkout] = useState<WorkoutDay | null>(null);
+  const [selectedRoutine, setSelectedRoutine] = useState<{
+    routine: Routine;
+    day: RoutineDay;
+  } | null>(null);
   const [logs, setLogs] = useState<WorkoutLog[]>([]);
 
   useEffect(() => {
@@ -58,8 +59,7 @@ export function CalendarPageClient() {
 
   function handleDaySelect(dateStr: string) {
     setSelectedDate(dateStr);
-    const workout = getWorkoutForDate(dateStr);
-    setSelectedWorkout(workout);
+    setSelectedRoutine(getRoutineDayForDate(dateStr));
   }
 
   function prevMonth() {
@@ -115,7 +115,7 @@ export function CalendarPageClient() {
             const isToday = dateStr === todayStr;
             const isPast = dateStr < todayStr;
             const completed = isCompleted(dateStr);
-            const workout = getWorkoutForDate(dateStr);
+            const routineMatch = getRoutineDayForDate(dateStr);
             const isSelected = dateStr === selectedDate;
 
             return (
@@ -140,13 +140,13 @@ export function CalendarPageClient() {
                 >
                   {dayNum}
                 </span>
-                {workout && (
+                {routineMatch && (
                   <span
                     className={cn(
                       "w-1.5 h-1.5 rounded-full mt-0.5",
                       completed ? "bg-emerald-400" :
                       isToday ? "bg-brand-500" :
-                      WORKOUT_COLORS[workout.type]?.split(" ")[0] ?? "bg-slate-600"
+                      ROUTINE_DOT_COLORS[routineMatch.routine.type] ?? "bg-slate-600"
                     )}
                   />
                 )}
@@ -180,9 +180,9 @@ export function CalendarPageClient() {
                     day: "numeric",
                   })}
                 </p>
-                {selectedWorkout ? (
+                {selectedRoutine ? (
                   <h3 className="text-xl font-black text-slate-100">
-                    {selectedWorkout.name}
+                    {selectedRoutine.day.sessions[0]?.title ?? selectedRoutine.routine.name}
                   </h3>
                 ) : (
                   <h3 className="text-lg font-bold text-slate-500">No Workout</h3>
@@ -193,24 +193,27 @@ export function CalendarPageClient() {
               )}
             </div>
 
-            {selectedWorkout && (
+            {selectedRoutine && (
               <>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant={difficultyVariant(selectedWorkout.difficulty)}>
-                    {selectedWorkout.difficulty}
-                  </Badge>
                   <Badge variant="default">
-                    {getWorkoutTypeLabel(selectedWorkout.type)}
+                    {selectedRoutine.routine.type}
+                  </Badge>
+                  <Badge variant="warning">
+                    Difficulty {getRoutineDifficulty(selectedRoutine.day)}/10
                   </Badge>
                   <Badge variant="info">
-                    {formatDuration(selectedWorkout.estimatedDuration)}
+                    {formatDuration(getRoutineEstimatedMinutes(selectedRoutine.day))}
                   </Badge>
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  {selectedWorkout.description}
+                  {selectedRoutine.routine.name}
                 </p>
                 <p className="text-slate-500 text-xs">
-                  {selectedWorkout.exerciseIds.length} exercises · {selectedWorkout.phase}
+                  {selectedRoutine.day.sessions.reduce(
+                    (sum, session) => sum + session.exercises.length,
+                    0
+                  )} exercises · {selectedRoutine.day.sessions.length} session
                 </p>
               </>
             )}

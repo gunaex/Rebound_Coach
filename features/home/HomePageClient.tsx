@@ -12,20 +12,23 @@ import {
   Star,
 } from "lucide-react";
 import {
-  getTodayWorkout,
   getTodayDisplayString,
   getTodayDateString,
   formatDuration,
-  getWorkoutTypeLabel,
 } from "@/lib/workout";
+import {
+  getRoutineDifficulty,
+  getRoutineEstimatedMinutes,
+  getTodayRoutineDay,
+} from "@/lib/routines";
 import {
   getWorkoutLogs,
   getUserProgress,
   calculateStreak,
 } from "@/lib/storage";
 import { Button } from "@/components/ui/Button";
-import { Badge, difficultyVariant } from "@/components/ui/Badge";
-import type { WorkoutDay, UserProgress, WorkoutLog } from "@/types";
+import { Badge } from "@/components/ui/Badge";
+import type { Routine, RoutineDay, UserProgress, WorkoutLog } from "@/types";
 
 const QUOTES = [
   "Sweat now. Perform later.",
@@ -57,15 +60,18 @@ const LEVEL_COLORS: Record<string, string> = {
 };
 
 export function HomePageClient() {
-  const [workout, setWorkout] = useState<WorkoutDay | null>(null);
+  const [todayPlan, setTodayPlan] = useState<{
+    routine: Routine;
+    day: RoutineDay;
+  } | null>(null);
   const [progress, setProgress] = useState<UserProgress | null>(null);
   const [streak, setStreak] = useState({ current: 0, longest: 0 });
   const [todayLog, setTodayLog] = useState<WorkoutLog | null>(null);
   const [quote, setQuote] = useState(QUOTES[0]);
 
   useEffect(() => {
-    const todayWorkout = getTodayWorkout();
-    setWorkout(todayWorkout);
+    const todayRoutine = getTodayRoutineDay();
+    setTodayPlan(todayRoutine);
 
     const userProgress = getUserProgress();
     setProgress(userProgress);
@@ -84,11 +90,20 @@ export function HomePageClient() {
     setQuote(QUOTES[idx]);
   }, []);
 
-  const isRestDay =
-    workout?.type === "recovery" || workout?.type === "flex";
+  const isRestDay = todayPlan?.routine.type === "recovery";
   const levelColor =
     LEVEL_COLORS[progress?.currentLevel ?? "foundation"];
   const todayCompleted = todayLog?.isCompleted ?? false;
+  const primarySession = todayPlan?.day.sessions[0];
+  const exerciseCount =
+    todayPlan?.day.sessions.reduce(
+      (sum, session) => sum + session.exercises.length,
+      0
+    ) ?? 0;
+  const estimatedDuration = todayPlan
+    ? getRoutineEstimatedMinutes(todayPlan.day)
+    : 0;
+  const difficulty = todayPlan ? getRoutineDifficulty(todayPlan.day) : 0;
 
   return (
     <div className="page">
@@ -142,7 +157,7 @@ export function HomePageClient() {
         </div>
 
         {/* Today's Workout Card */}
-        {workout ? (
+        {todayPlan && primarySession ? (
           <div
             className="animate-slide-up"
             style={{ animationDelay: "0.1s" }}
@@ -169,17 +184,16 @@ export function HomePageClient() {
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                       <Badge
-                        variant={difficultyVariant(workout.difficulty)}
+                        variant={difficulty >= 7 ? "brand" : difficulty >= 5 ? "warning" : "success"}
                       >
-                        {workout.difficulty.charAt(0).toUpperCase() +
-                          workout.difficulty.slice(1)}
+                        Difficulty {difficulty}/10
                       </Badge>
                       <Badge variant="default">
-                        {getWorkoutTypeLabel(workout.type)}
+                        {todayPlan.routine.type}
                       </Badge>
                     </div>
                     <h2 className="text-2xl font-black text-slate-100">
-                      {workout.name}
+                      {primarySession.title}
                     </h2>
                     {todayCompleted && (
                       <p className="text-emerald-400 text-sm font-semibold">
@@ -196,21 +210,21 @@ export function HomePageClient() {
               {/* Details */}
               <div className="bg-dark-800 p-5 flex flex-col gap-4">
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  {workout.description}
+                  Plan → Execute → Adapt. Follow each exercise in guided workout mode.
                 </p>
 
                 <div className="flex items-center gap-4 text-sm">
                   <span className="flex items-center gap-1.5 text-slate-400">
                     <Clock size={14} className="text-brand-500" />
-                    {formatDuration(workout.estimatedDuration)}
+                    {formatDuration(estimatedDuration)}
                   </span>
                   <span className="flex items-center gap-1.5 text-slate-400">
                     <Dumbbell size={14} className="text-brand-500" />
-                    {workout.exerciseIds.length} exercises
+                    {exerciseCount} exercises
                   </span>
                   <span className="flex items-center gap-1.5 text-slate-400">
                     <Star size={14} className="text-brand-500" />
-                    {workout.phase}
+                    {todayPlan.routine.name}
                   </span>
                 </div>
 
@@ -229,7 +243,7 @@ export function HomePageClient() {
             <span className="text-4xl">🏀</span>
             <p className="text-slate-300 font-semibold">No workout scheduled</p>
             <p className="text-slate-500 text-sm">
-              Check your calendar for the weekly plan
+              Check your calendar for the next routine day
             </p>
           </div>
         )}
@@ -246,7 +260,7 @@ export function HomePageClient() {
                 href: "/calendar",
                 icon: "📅",
                 label: "Calendar",
-                sub: "View weekly plan",
+                sub: "View routine plan",
               },
               {
                 href: "/progress",

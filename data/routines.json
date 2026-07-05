@@ -50,6 +50,7 @@
                 "reps": 12,
                 "restSec": 90,
                 "instruction": "Sit between your hips, keep chest tall, and drive the floor away.",
+                "coachTips": "Use a weight you can control. Quality depth beats load.",
                 "difficulty": 5
               },
               {
@@ -58,6 +59,7 @@
                 "reps": 10,
                 "restSec": 90,
                 "instruction": "Push hips back, keep shins quiet, and feel hamstrings load.",
+                "coachTips": "Keep the weight close to your body like it is sliding down your legs.",
                 "difficulty": 6
               },
               {
@@ -92,6 +94,7 @@
                 "durationSec": 45,
                 "restSec": 30,
                 "instruction": "Light feet, tall posture, smooth rhythm.",
+                "coachTips": "Relax the shoulders and let the wrists do most of the rope work.",
                 "difficulty": 6
               },
               {

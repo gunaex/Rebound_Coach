@@ -228,10 +228,10 @@ export function HomePageClient() {
                   </span>
                 </div>
 
-                <Link href="/workout">
+                <Link href="/workout/execute">
                   <Button variant="primary" size="xl">
                     <Zap size={20} />
-                    {todayCompleted ? "Review Workout" : "Start Workout"}
+                    {todayCompleted ? "REVIEW WORKOUT" : "START WORKOUT"}
                     <ChevronRight size={18} />
                   </Button>
                 </Link>

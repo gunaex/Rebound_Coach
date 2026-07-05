@@ -104,6 +104,7 @@ export interface RoutineExercise {
   durationSec?: number;
   restSec?: number;
   instruction?: string;
+  coachTips?: string;
   difficulty?: number;
 }
 

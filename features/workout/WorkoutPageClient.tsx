@@ -4,9 +4,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Check,
-  ChevronLeft,
   ChevronRight,
   Flame,
+  Pause,
+  Play,
   RotateCcw,
   SkipForward,
   Timer,
@@ -30,7 +31,7 @@ type ExecutionState =
   | "IDLE"
   | "LOADING_WORKOUT"
   | "READY"
-  | "IN_EXERCISE"
+  | "IN_PROGRESS"
   | "RESTING"
   | "NEXT_EXERCISE"
   | "COMPLETED";
@@ -45,6 +46,7 @@ export function WorkoutPageClient() {
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set());
   const [skippedIds, setSkippedIds] = useState<Set<string>>(new Set());
   const [remaining, setRemaining] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [elapsedMinutes, setElapsedMinutes] = useState(0);
   const [feltDifficulty, setFeltDifficulty] = useState<number | null>(null);
   const [defaultRest, setDefaultRest] = useState(90);
@@ -77,6 +79,8 @@ export function WorkoutPageClient() {
   const finishedCount = completedCount + skippedCount;
   const progressPercentage =
     steps.length > 0 ? Math.round((finishedCount / steps.length) * 100) : 0;
+  const completionRate =
+    steps.length > 0 ? Math.round((completedCount / steps.length) * 100) : 0;
   const isTimedExercise = Boolean(currentStep?.exercise.durationSec);
   const restDuration = currentStep?.exercise.restSec ?? defaultRest;
 
@@ -170,7 +174,7 @@ export function WorkoutPageClient() {
       window.setTimeout(() => {
         setCurrentIndex(nextIndex);
         setRemaining(0);
-        setState("IN_EXERCISE");
+        setState("IN_PROGRESS");
       }, 350);
     },
     [completedIds, currentIndex, finishSession, skippedIds, steps.length]
@@ -220,18 +224,20 @@ export function WorkoutPageClient() {
       startTimeRef.current = new Date();
     }
 
-    setState("IN_EXERCISE");
+    setState("IN_PROGRESS");
+    setIsPaused(false);
     setRemaining(currentStep.exercise.durationSec ?? 0);
   }, [currentStep]);
 
   useEffect(() => {
-    if (state !== "IN_EXERCISE" || !isTimedExercise || remaining > 0) return;
+    if (state !== "IN_PROGRESS" || !isTimedExercise || remaining > 0) return;
     setRemaining(currentStep?.exercise.durationSec ?? 0);
   }, [currentStep, isTimedExercise, remaining, state]);
 
   useEffect(() => {
     if (
-      (state !== "IN_EXERCISE" && state !== "RESTING") ||
+      (state !== "IN_PROGRESS" && state !== "RESTING") ||
+      isPaused ||
       remaining <= 0
     ) {
       return;
@@ -246,7 +252,7 @@ export function WorkoutPageClient() {
           }
 
           window.setTimeout(() => {
-            if (state === "IN_EXERCISE" && isTimedExercise) {
+            if (state === "IN_PROGRESS" && isTimedExercise) {
               completeExercise();
             }
             if (state === "RESTING") {
@@ -262,7 +268,14 @@ export function WorkoutPageClient() {
     }, 1000);
 
     return () => window.clearInterval(interval);
-  }, [completeExercise, isTimedExercise, moveToNextExercise, remaining, state]);
+  }, [
+    completeExercise,
+    isPaused,
+    isTimedExercise,
+    moveToNextExercise,
+    remaining,
+    state,
+  ]);
 
   if (state === "LOADING_WORKOUT" || state === "IDLE") {
     return (
@@ -311,6 +324,7 @@ export function WorkoutPageClient() {
             />
             <SummaryStat label="Completed" value={`${completedCount}`} />
             <SummaryStat label="Missed" value={`${skippedCount}`} />
+            <SummaryStat label="Rate" value={`${completionRate}%`} />
             <SummaryStat label="Calories" value={`~${estimatedCalories}`} />
           </div>
 
@@ -342,9 +356,9 @@ export function WorkoutPageClient() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Link href="/progress">
+            <Link href="/">
               <Button variant="primary" size="xl">
-                <Trophy size={18} /> View Progress
+                <Trophy size={18} /> FINISH WORKOUT
               </Button>
             </Link>
             <button
@@ -373,13 +387,18 @@ export function WorkoutPageClient() {
     <div className="min-h-svh overflow-hidden bg-dark-950 text-slate-100">
       <div className="mx-auto flex min-h-svh max-w-md flex-col px-5 pb-6 pt-7">
         <header className="flex items-center justify-between gap-3">
-          <Link
-            href="/"
-            className="rounded-full bg-white/5 p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
-            aria-label="Exit workout"
+          <button
+            onClick={() => setIsPaused((value) => !value)}
+            className={cn(
+              "rounded-full p-2 transition-colors",
+              isPaused
+                ? "bg-brand-500 text-white"
+                : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+            )}
+            aria-label={isPaused ? "Resume workout" : "Pause workout"}
           >
-            <ChevronLeft size={20} />
-          </Link>
+            {isPaused ? <Play size={20} /> : <Pause size={20} />}
+          </button>
           <div className="min-w-0 flex-1">
             <p className="truncate text-center text-xs font-semibold uppercase tracking-widest text-slate-500">
               {currentPlan.day.sessions[0]?.title}
@@ -408,8 +427,12 @@ export function WorkoutPageClient() {
           ) : state === "RESTING" ? (
             <TimerPanel
               eyebrow="Rest"
-              title="Recover"
-              helper="Breathe. Reset posture. Next exercise loads automatically."
+              title={isPaused ? "Paused" : "Recover"}
+              helper={
+                isPaused
+                  ? "Paused. Press play when you are ready."
+                  : "Breathe. Reset posture. Next exercise loads automatically."
+              }
               seconds={displayTimer}
               accent="text-teal-300"
             />
@@ -424,6 +447,7 @@ export function WorkoutPageClient() {
               seconds={displayTimer}
               isTimed={isTimedExercise}
               state={state}
+              isPaused={isPaused}
               onStart={startExercise}
               onSetTimer={setRemaining}
             />
@@ -432,12 +456,12 @@ export function WorkoutPageClient() {
 
         {state !== "READY" && state !== "NEXT_EXERCISE" && (
           <footer className="flex flex-col gap-3">
-            {state === "IN_EXERCISE" && !isTimedExercise && (
+            {state === "IN_PROGRESS" && !isTimedExercise && (
               <Button variant="primary" size="xl" onClick={completeExercise}>
                 <Check size={20} /> Done
               </Button>
             )}
-            {state === "IN_EXERCISE" && isTimedExercise && (
+            {state === "IN_PROGRESS" && isTimedExercise && (
               <Button variant="secondary" size="xl" onClick={completeExercise}>
                 <Check size={20} /> Finish Now
               </Button>
@@ -451,7 +475,7 @@ export function WorkoutPageClient() {
                 Next Exercise <ChevronRight size={20} />
               </Button>
             )}
-            {state === "IN_EXERCISE" && (
+            {state === "IN_PROGRESS" && (
               <button
                 onClick={skipExercise}
                 className="flex items-center justify-center gap-2 rounded-2xl py-4 text-sm font-bold text-slate-500 transition-colors hover:bg-white/5 hover:text-slate-300"
@@ -503,6 +527,7 @@ function ExercisePanel({
   seconds,
   isTimed,
   state,
+  isPaused,
   onStart,
   onSetTimer,
 }: {
@@ -510,6 +535,7 @@ function ExercisePanel({
   seconds: number;
   isTimed: boolean;
   state: ExecutionState;
+  isPaused: boolean;
   onStart: () => void;
   onSetTimer: (seconds: number) => void;
 }) {
@@ -529,13 +555,27 @@ function ExercisePanel({
           {step.exercise.instruction ??
             "Move with control and keep the quality high."}
         </p>
+        {step.exercise.coachTips && (
+          <div className="mx-auto mt-5 max-w-sm rounded-2xl border border-brand-500/20 bg-brand-500/10 p-4 text-left">
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-300">
+              Coach Tip
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-slate-300">
+              {step.exercise.coachTips}
+            </p>
+          </div>
+        )}
       </div>
 
       {isTimed ? (
         <TimerPanel
-          eyebrow={state === "IN_EXERCISE" ? "Work Timer" : "Timed Exercise"}
-          title={state === "IN_EXERCISE" ? "Go" : "Ready"}
-          helper="Timer starts automatically. Stay smooth until it ends."
+          eyebrow={state === "IN_PROGRESS" ? "Work Timer" : "Timed Exercise"}
+          title={isPaused ? "Paused" : state === "IN_PROGRESS" ? "Go" : "Ready"}
+          helper={
+            isPaused
+              ? "Paused. Press play to continue the countdown."
+              : "Timer starts automatically. Stay smooth until it ends."
+          }
           seconds={seconds}
           accent="text-brand-300"
         />
@@ -551,7 +591,7 @@ function ExercisePanel({
         </div>
       )}
 
-      {isTimed && state !== "IN_EXERCISE" && (
+      {isTimed && state !== "IN_PROGRESS" && (
         <Button variant="primary" size="xl" onClick={onStart}>
           <Timer size={20} /> Start Timer
         </Button>

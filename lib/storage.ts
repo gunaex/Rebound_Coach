@@ -165,7 +165,6 @@ export function calculateStreak(logs: WorkoutLog[]): {
 
   let current = 0;
   let longest = 0;
-  let streak = 1;
 
   const today = new Date();
   const todayStr = toLocalDateString(today);

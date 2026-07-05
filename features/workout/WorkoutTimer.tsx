@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { X, Pause, Play } from "lucide-react";
 import { formatTimer } from "@/lib/workout";
 import type { TimerPreset } from "@/types";

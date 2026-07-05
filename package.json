@@ -4,17 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
-    "next": "15.3.4",
-    "next-pwa": "^5.6.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
@@ -22,10 +21,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10",
-    "eslint": "^8",
-    "eslint-config-next": "15.3.4",
-    "postcss": "^8",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.10",
+    "postcss": "^8.5.16",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "$postcss",
+    "serialize-javascript": "^7.0.7"
   }
 }

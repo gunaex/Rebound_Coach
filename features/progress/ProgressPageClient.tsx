@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Flame, Trophy, Zap, Lock, Star } from "lucide-react";
+import { Flame, Trophy, Lock, Star } from "lucide-react";
 import {
   getWorkoutLogs,
   getUserProgress,
@@ -66,12 +66,6 @@ export function ProgressPageClient() {
 
   // Skills from exercises
   const skills = exercises.filter((ex) => ex.skillName);
-  const unlockedSkills = skills.filter(
-    (ex) =>
-      LEVEL_INDEX[ex.unlockLevel] <=
-      LEVEL_INDEX[progress?.currentLevel ?? "foundation"]
-  );
-
   return (
     <div className="page">
       <div className="px-4 pt-12 pb-4 flex flex-col gap-6">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { X, SkipForward } from "lucide-react";
 import { formatTimer } from "@/lib/workout";
 import { cn } from "@/lib/utils";

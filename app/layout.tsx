@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { BottomNav } from "@/components/ui/BottomNav";
+import { PWARegister } from "@/components/PWARegister";
 
 export const metadata: Metadata = {
   title: "Rebound Coach — Basketball & Fat Loss Trainer",
@@ -42,6 +43,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-dark-900 text-slate-100 font-sans antialiased overflow-x-hidden">
+        <PWARegister />
         <div className="relative min-h-svh">
           {children}
           <BottomNav />

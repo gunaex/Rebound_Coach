@@ -10,7 +10,6 @@ coverage
 
 # Build/cache artifacts
 *.tsbuildinfo
-public/sw.js
 public/workbox-*.js
 
 # OS/editor noise

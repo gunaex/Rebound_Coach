@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   ChevronLeft,
   ChevronRight,
-  CheckCircle2,
   Trophy,
   RotateCcw,
 } from "lucide-react";
